@@ -1,0 +1,5 @@
+css
+.navbar-logo {
+    width: 10px;  /* Adjust this number until it looks right */
+    height: auto;   /* This keeps the logo from looking stretched */
+}
