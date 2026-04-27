@@ -9,12 +9,26 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
+
     .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-      background-color: rgb(44, 44, 44);
-    }
-    
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: rgb(177, 193, 197);
+}
+.navbar-toggle {
+  float: right !important;
+  margin-right: 15px;
+}
+.navbar-header {
+  float: left;
+   width: 100%;
+}
+  .logo {
+  height: 60px;
+  width: auto;
+  display: block;
+  
+}
     /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #f2f2f2;
@@ -25,14 +39,13 @@
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"> <img src="logo.png" style="width: 150px; height:75px ;" alt="Logo"></a>
+          <img src="logo.png" class="logo" alt="Logo">
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
