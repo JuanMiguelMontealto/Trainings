@@ -1,121 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Task One Portfolio</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Add Font Awesome CDN in the <head> section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    .navbar {
-  margin-bottom: 0;
-  border-radius: 0;
-  background-color: rgb(177, 193, 197);
-}
-.navbar-toggle {
-  float: right !important;
-  margin-right: 15px;
-}
-.navbar-header {
-  float: left;
-   width: 100%;
-}
-  .logo {
-  height: 60px;
-  width: auto;
-  display: block;
-  
-}
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-.portfolio-banner {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-}
-  </style>
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hero-section {
+            background: #f8f9fa;
+            padding: 50px 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .section-title {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .contact-form input, .contact-form textarea {
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #343a40;
+            color: white;
+        }
+    </style>
+    
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-          <img src="logo.png" class="logo" alt="Logo"> 
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <!-- Logo Image -->
+        <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="My Portfolio Logo" style="height: 60px;">TASK ONE: PORTFOLIO
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-  </div>
 </nav>
 
-<div class="jumbotron" style="padding: 0; overflow: hidden;">
-  <img src="pic1.jpg" alt="My Portfolio" class="portfolio-banner">
+<!-- Home Section -->
+<section id="home" class="hero-section text-center" style="background-image: url('home.png'); background-size: cover; background-position: center; padding: 100px 0; color: white;">
+    <div class="container">
+        <h1 style="font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 3rem; font-weight: bold;">Don't just pass by or click away; get to know me and my work today.</h1>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="section-title">About Me</h2>
+                <p>
+
+I’m a 22-year-old IT professional with a love for structured data and creative storytelling. I graduated with a degree in Information Technology from Batangas State University, where I served as a student representative and honed my skills in business analytics.
+
+Interestingly, my first passion wasn't tech—it was Culinary Arts. While I chose the path of a developer and QA specialist, I still bring that same "chef’s precision" to my technical work. I’m a firm believer that whether you’re crafting a line of code or a meal, the details matter most.
+
+Currently based in Makati, I spend my downtime immersed in fantasy worlds, listening to podcasts, or cooking for friends.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="me.png" alt="About Me" class="img-fluid rounded-circle">
+            </div>
+        </div>
+    </section>
+
+
+<!-- Gallery Section -->
+<section id="gallery" class="container my-5">
+    <h2 class="section-title">Gallery</h2>
+
+    <!-- Bootstrap Carousel -->
+    <div id="carouselGallery" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Carousel items -->
+            <div class="carousel-item active">
+                <img src="gal1.jfif" alt="Gallery Image 1" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal" style="height: 300px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="gal2.jfif" alt="Gallery Image 2" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal" style="height: 300px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="gal3.jfif" alt="Gallery Image 3" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal" style="height: 300px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="gal4.jfif" alt="Gallery Image 4" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal" style="height: 300px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="gal5.jfif" alt="Gallery Image 5" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal" style="height: 300px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="gal6.jfif" alt="Gallery Image 6" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal" style="height: 300px; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="container my-5">
+    <h2 class="section-title">Projects</h2>
+
+    <!-- Project 1 -->
+    <div class="row my-4">
+        <div class="col-md-6">
+            <img src="project 1.PNG" alt="Project 1" class="img-fluid" style="height: auto; width: 100%; border-radius: 8px;">
+        </div>
+        <div class="col-md-6">
+            <h4>Project 1: Web Development</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis metus vitae felis euismod, sit amet iaculis libero volutpat. Quisque facilisis orci eu arcu egestas, at gravida risus aliquet. Fusce sollicitudin tincidunt est non rutrum. Phasellus ullamcorper mauris ut orci lacinia tincidunt.</p>
+        </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="row my-4">
+        <div class="col-md-6">
+            <img src="project 2.PNG" alt="Project 2" class="img-fluid" style="height: auto; width: 100%; border-radius: 8px;">
+        </div>
+        <div class="col-md-6">
+            <h4>Project 2: Mobile App Design</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis metus vitae felis euismod, sit amet iaculis libero volutpat. Quisque facilisis orci eu arcu egestas, at gravida risus aliquet. Fusce sollicitudin tincidunt est non rutrum. Phasellus ullamcorper mauris ut orci lacinia tincidunt.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="container my-5">
+    <h2 class="section-title">Contact</h2>
+    <div class="row">
+        <div class="col-12">
+            <!-- Email Icon and Text -->
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> jmmontealto@sscgi.com</p>
+            <!-- Phone Icon and Text -->
+            <p><i class="fas fa-phone-alt"></i> <strong>Phone Number:</strong> 09709124594 / 09752108229</p>
+            <!-- Address Icon and Text -->
+            <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Victoria De Makati, Washington Street corner Dela Rosa Street, Barangay Pio del Pilar, Makati City, 1230 Metro Manila, Philippines</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 My Portfolio. All Rights Reserved.</p>
+        <p>Nice Meeting You All, Have A Blessed Morning</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Modal to View Larger Image -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body position-relative">
+                <!-- Enlarged Image -->
+                <img id="modalImage" src="" class="img-fluid" alt="Enlarged Image">
+                <!-- Modal Controls with "<" and ">" positioned on the left and right of the image -->
+                <span id="prevBtn" class="carousel-control-prev-icon" aria-hidden="true" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); font-size: 2rem; color: white; cursor: pointer;">&lt;</span>
+                <span id="nextBtn" class="carousel-control-next-icon" aria-hidden="true" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); font-size: 2rem; color: white; cursor: pointer;">&gt;</span>
+            </div>
+        </div>
+    </div>
 </div>
-  
-<div class="container-fluid bg-3 text-center">    
-  <h3>Some of my Work</h3><br>
-  <div class="row">
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3"> 
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3"> 
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-  </div>
-</div><br>
 
-<div class="container-fluid bg-3 text-center">    
-  <div class="row">
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3"> 
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3"> 
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-  </div>
-</div><br><br>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
+<script>
+    // JavaScript to handle the modal and enlarge images
+    const carouselImages = document.querySelectorAll('.carousel-item img');
+    const modalImage = document.getElementById('modalImage');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    let currentIndex = 0;
+
+    // Function to update the modal image source
+    function updateModalImage(index) {
+        modalImage.src = carouselImages[index].src;
+    }
+
+    // Event listener for each image in the carousel
+    carouselImages.forEach((img, index) => {
+        img.addEventListener('click', () => {
+            currentIndex = index;
+            updateModalImage(currentIndex);
+        });
+    });
+
+    // Event listener for 'Next' arrow
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < carouselImages.length - 1) {
+            currentIndex++;
+            updateModalImage(currentIndex);
+        }
+    });
+
+    // Event listener for 'Previous' arrow
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateModalImage(currentIndex);
+        }
+    });
+</script>
 
 </body>
-</html>                           
+</html>
