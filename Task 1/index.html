@@ -48,6 +48,132 @@
     width: 100%;
     max-width: 900px; /* increase this */
 }
+
+
+        /* ===== PROJECTS ===== */
+        #projects {
+            background: linear-gradient(180deg, var(--dark-blue) 0%, rgba(152, 183, 236, 0.5) 100%);
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(100, 181, 246, 0.1);
+            height: 100%;
+            position: relative;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+        }
+
+        .project-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .project-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-body {
+            padding: 1.8rem;
+        }
+
+        .project-body h4 {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--text-white);
+            font-size: 1.2rem;
+        }
+
+        .project-body p {
+            color: var(--text-light);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .project-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(13, 110, 253, 0.15);
+            border: 1px solid rgba(13, 110, 253, 0.3);
+            border-radius: 50px;
+            color: var(--light-blue);
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        
+        /* ===== CONTACT ===== */
+        #contact {
+            background: linear-gradient(180deg, rgba(17, 34, 64, 0.5) 0%, var(--dark-blue) 100%);
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(100, 181, 246, 0.1);
+            height: 100%;
+        }
+
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 1.2rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(13, 110, 253, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(100, 181, 246, 0.1);
+        }
+
+        .contact-info-item i {
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            margin-top: 3px;
+            min-width: 24px;
+        }
+
+        .contact-info-item strong {
+            color: var(--text-white);
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-info-item span {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
     </style>
     
 </head>
@@ -145,46 +271,87 @@ Currently based in Makati, I spend my free time reading and watching fantasy and
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="container my-5">
-    <h2 class="section-title">Projects</h2>
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title">My <span>Projects</span></h2>
 
-    <!-- Project 1 -->
-    <div class="row my-4">
-        <div class="col-md-6">
-            <img src="project 1.PNG" alt="Project 1" class="img-fluid" style="height: auto; width: 100%; border-radius: 8px;">
-        </div>
-        <div class="col-md-6">
-            <h4>Project 1: Multi-Channel Inventory Management System</h4>
-            <p> An inventory management system for BMSuit that synchronizes stock levels across Shopee, TikTok Shop, and physical storefronts. The system features a real-time analytics dashboard for tracking key metrics and a dedicated inventory module to manage multi-channel product movement. By consolidating these platforms into a single interface, the project streamlines operations and ensures data accuracy across all sales channels.</p>
-        </div>
-    </div>
+        <div class="row g-4">
+            <!-- Project 1 -->
+            <div class="col-md-6">
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="project 1.PNG" alt="Project 1">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-tags mb-2">
+                            <span class="project-tag">Inventory System</span>
+                            <span class="project-tag">Multi-Channel</span>
+                        </div>
+                        <h4>Multi-Channel Inventory Management System</h4>
+                        <p>An inventory management system for BMSuit that synchronizes stock levels across Shopee, TikTok Shop, and physical storefronts. The system features a real-time analytics dashboard for tracking key metrics and a dedicated inventory module to manage multi-channel product movement. By consolidating these platforms into a single interface, the project streamlines operations and ensures data accuracy across all sales channels.</p>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Project 2 -->
-    <div class="row my-4">
-        <div class="col-md-6">
-            <img src="project 2.PNG" alt="Project 2" class="img-fluid" style="height: auto; width: 100%; border-radius: 8px;">
-        </div>
-        <div class="col-md-6">
-            <h4>Project 2: ACIS: ACTION Center Inventory System</h4>
-            <p>An inventory system for the BatStateU-ACTION Center to streamline the management of critical office supplies, emergency kits, and rescue equipment. The platform features a real-time dashboard for high-level asset tracking and inventory module for efficient stock handling. To modernize the lending process, We integrated a QR-based borrowing system, allowing the department to easily manage and track equipment loans to other university offices with increased speed and accuracy.</p>
+            <!-- Project 2 -->
+            <div class="col-md-6">
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="project 2.PNG" alt="Project 2">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-tags mb-2">
+                            <span class="project-tag">QR-Based</span>
+                            <span class="project-tag">University</span>
+                        </div>
+                        <h4>ACIS: ACTION Center Inventory System</h4>
+                        <p>An inventory system for the BatStateU-ACTION Center to streamline the management of critical office supplies, emergency kits, and rescue equipment. The platform features a real-time dashboard for high-level asset tracking and inventory module for efficient stock handling. To modernize the lending process, we integrated a QR-based borrowing system, allowing the department to easily manage and track equipment loans to other university offices with increased speed and accuracy.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="container my-5">
-    <h2 class="section-title">Contact</h2>
-    <div class="row">
-        <div class="col-12">
-            <!-- Email Icon and Text -->
-            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> jmmontealto@sscgi.com</p>
-            <!-- Phone Icon and Text -->
-            <p><i class="fas fa-phone-alt"></i> <strong>Phone Number:</strong> 09709124594 / 09752108229</p>
-            <!-- Address Icon and Text -->
-            <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Victoria De Makati, Washington Street corner Dela Rosa Street, Barangay Pio del Pilar, Makati City, 1230 Metro Manila, Philippines</p>
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="contact-card">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="contact-info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <span>jmmontealto@sscgi.com</span>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <strong>Phone Number</strong>
+                                    <span>09709124594 / 09752108229</span>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Address</strong>
+                                    <span>Victoria De Makati, Washington Street corner Dela Rosa Street, Barangay Pio del Pilar, Makati City, 1230 Metro Manila, Philippines</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
 
     <!-- Footer -->
     <footer>
