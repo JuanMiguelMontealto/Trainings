@@ -4,55 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Add Font Awesome CDN in the <head> section -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Custom CSS -->
     <style>
+        :root {
+            --dark-blue: #0a192f;
+            --primary-blue: #0d6efd;
+            --light-blue: #64b5f6;
+            --accent-blue: #4fc3f7;
+            --card-bg: #112240;
+            --text-white: #e6f1ff;
+            --text-light: #8892b0;
+        }
+
         body {
             font-family: Arial, sans-serif;
         }
-        .hero-section {
-            background: #f8f9fa;
-            padding: 50px 0;
-        }
-        .gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
+
         .section-title {
             text-align: center;
             margin-top: 30px;
+            margin-bottom: 30px;
             font-size: 2rem;
             font-weight: bold;
+            color: var(--text-white);
         }
-        .contact-form input, .contact-form textarea {
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 15px;
-            width: 100%;
+
+        .section-title span {
+            color: var(--primary-blue);
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #343a40;
+
+        /* ===== HERO ===== */
+        .hero-section {
+            background-image: url('home.png');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
             color: white;
         }
 
-.about-img {
-    width: 100%;
-    max-width: 900px; /* increase this */
-}
+        .hero-section h1 {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
 
+        /* ===== ABOUT ===== */
+        .about-img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        /* ===== GALLERY ===== */
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 8px;
+        }
 
         /* ===== PROJECTS ===== */
         #projects {
             background: linear-gradient(180deg, var(--dark-blue) 0%, rgba(152, 183, 236, 0.5) 100%);
+            padding: 50px 0;
         }
 
         .project-card {
@@ -104,6 +125,10 @@
             margin-bottom: 0;
         }
 
+        .project-tags {
+            margin-bottom: 0.8rem;
+        }
+
         .project-tag {
             display: inline-block;
             padding: 0.3rem 0.8rem;
@@ -117,10 +142,10 @@
             font-weight: 500;
         }
 
-        
         /* ===== CONTACT ===== */
         #contact {
             background: linear-gradient(180deg, rgba(17, 34, 64, 0.5) 0%, var(--dark-blue) 100%);
+            padding: 50px 0;
         }
 
         .contact-card {
@@ -129,19 +154,6 @@
             padding: 2.5rem;
             border: 1px solid rgba(100, 181, 246, 0.1);
             height: 100%;
-        }
-
-        .contact-icon {
-            width: 55px;
-            height: 55px;
-            border-radius: 15px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            color: white;
-            margin-bottom: 1.2rem;
         }
 
         .contact-info-item {
@@ -174,99 +186,148 @@
             font-size: 0.9rem;
         }
 
+        /* ===== MODAL ===== */
+        .modal-control-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+            z-index: 10;
+        }
+
+        .modal-control-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-prev { left: 15px; }
+        .modal-next { right: 15px; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #343a40;
+            color: white;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .carousel-item img {
+                height: 250px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
     </style>
-    
 </head>
 <body>
 
-<!-- Navigation Bar -->
+<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <!-- Logo Image -->
         <a class="navbar-brand" href="#">
-            <img src="logo.png" alt="My Portfolio Logo" style="height: 60px;">TASK ONE: PORTFOLIO
+            <img src="logo.png" alt="My Portfolio Logo" style="height: 60px;"> TASK ONE: PORTFOLIO
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#gallery">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
+                <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
 <!-- Home Section -->
-<section id="home" class="hero-section text-center" style="background-image: url('home.png'); background-size: cover; background-position: center; padding: 100px 0; color: white;">
+<section id="home" class="hero-section text-center">
     <div class="container">
-        <h1 style="font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 3rem; font-weight: bold;">Don't just pass by or click away; get to know me and my work today.</h1>
+        <h1>Don't just pass by or click away; get to know me and my work today.</h1>
     </div>
 </section>
 
-    <!-- About Section -->
-    <section id="about" class="container my-5">
-        <div class="row">
-            <div class="col-md-6">
-                <h2 class="section-title">About Me</h2>
-                <p>
-
-I’m a 22-year-old IT graduate with a love for structured data and creative storytelling. I graduated with a degree in Information Technology from Batangas State University, where I served as a student representative and honed my skills in business analytics.
-
-
-Interestingly, my first passion wasn't tech—it was Culinary Arts. While I chose the IT path, I still bring that same "chef’s precision" to my technical work. I’m a firm believer that whether you’re crafting a line of code or a meal, the details matter most.
-
-
-Currently based in Makati, I spend my free time reading and watching fantasy and BL genre materials, listening to podcasts, or cooking .</p>
-            </div>
-            <div class="col-md-6">
-                <img src="me.png" alt="About Me" class="img-fluid rounded-circle about-img">
-            </div>
+<!-- About Section -->
+<section id="about" class="container my-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h2 class="section-title" style="color: #333;">About Me</h2>
+            <p>
+                I'm a 22-year-old IT graduate with a love for structured data and creative storytelling. I graduated with a degree in Information Technology from Batangas State University, where I served as a student representative and honed my skills in business analytics.
+            </p>
+            <p>
+                Interestingly, my first passion wasn't tech—it was Culinary Arts. While I chose the IT path, I still bring that same "chef's precision" to my technical work. I'm a firm believer that whether you're crafting a line of code or a meal, the details matter most.
+            </p>
+            <p>
+                Currently based in Makati, I spend my free time reading and watching fantasy and BL genre materials, listening to podcasts, or cooking.
+            </p>
         </div>
-    </section>
-
+        <div class="col-md-6 text-center">
+            <img src="me.png" alt="About Me" class="img-fluid about-img">
+        </div>
+    </div>
+</section>
 
 <!-- Gallery Section -->
 <section id="gallery" class="container my-5">
-    <h2 class="section-title">Gallery</h2>
-
-    <!-- Bootstrap Carousel -->
+    <h2 class="section-title" style="color: #333;">Gallery</h2>
+    
     <div id="carouselGallery" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="5"></button>
+        </div>
+        
         <div class="carousel-inner">
-            <!-- Carousel items -->
             <div class="carousel-item active">
-                <img src="gal1.jfif" alt="Gallery Image 1" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal" style="height: 300px; object-fit: cover;">
+                <img src="gal1.jfif" alt="Gallery Image 1" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal">
             </div>
             <div class="carousel-item">
-                <img src="gal2.jfif" alt="Gallery Image 2" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal" style="height: 300px; object-fit: cover;">
+                <img src="gal2.jfif" alt="Gallery Image 2" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal">
             </div>
             <div class="carousel-item">
-                <img src="gal3.jfif" alt="Gallery Image 3" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal" style="height: 300px; object-fit: cover;">
+                <img src="gal3.jfif" alt="Gallery Image 3" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal">
             </div>
             <div class="carousel-item">
-                <img src="gal4.jfif" alt="Gallery Image 4" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal" style="height: 300px; object-fit: cover;">
+                <img src="gal4.jfif" alt="Gallery Image 4" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal">
             </div>
             <div class="carousel-item">
-                <img src="gal5.jfif" alt="Gallery Image 5" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal" style="height: 300px; object-fit: cover;">
+                <img src="gal5.jfif" alt="Gallery Image 5" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal">
             </div>
             <div class="carousel-item">
-                <img src="gal6.jfif" alt="Gallery Image 6" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal" style="height: 300px; object-fit: cover;">
+                <img src="gal6.jfif" alt="Gallery Image 6" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal">
             </div>
         </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
     </div>
 </section>
 
@@ -280,15 +341,15 @@ Currently based in Makati, I spend my free time reading and watching fantasy and
             <div class="col-md-6">
                 <div class="project-card">
                     <div class="project-img-wrapper">
-                        <img src="project 1.PNG" alt="Project 1">
+                        <img src="project 1.PNG" alt="Multi-Channel Inventory Management System">
                     </div>
                     <div class="project-body">
-                        <div class="project-tags mb-2">
+                        <div class="project-tags">
                             <span class="project-tag">Inventory System</span>
                             <span class="project-tag">Multi-Channel</span>
                         </div>
                         <h4>Multi-Channel Inventory Management System</h4>
-                        <p>An inventory management system for BMSuit that synchronizes stock levels across Shopee, TikTok Shop, and physical storefronts. The system features a real-time analytics dashboard for tracking key metrics and a dedicated inventory module to manage multi-channel product movement. By consolidating these platforms into a single interface, the project streamlines operations and ensures data accuracy across all sales channels.</p>
+                        <p>An inventory management system for BMSuit that synchronizes stock levels across Shopee, TikTok Shop, and physical storefronts. The system features a real-time analytics dashboard for tracking key metrics and a dedicated inventory module to manage multi-channel product movement.</p>
                     </div>
                 </div>
             </div>
@@ -297,15 +358,15 @@ Currently based in Makati, I spend my free time reading and watching fantasy and
             <div class="col-md-6">
                 <div class="project-card">
                     <div class="project-img-wrapper">
-                        <img src="project 2.PNG" alt="Project 2">
+                        <img src="project 2.PNG" alt="ACIS: ACTION Center Inventory System">
                     </div>
                     <div class="project-body">
-                        <div class="project-tags mb-2">
+                        <div class="project-tags">
                             <span class="project-tag">QR-Based</span>
                             <span class="project-tag">University</span>
                         </div>
                         <h4>ACIS: ACTION Center Inventory System</h4>
-                        <p>An inventory system for the BatStateU-ACTION Center to streamline the management of critical office supplies, emergency kits, and rescue equipment. The platform features a real-time dashboard for high-level asset tracking and inventory module for efficient stock handling. To modernize the lending process, we integrated a QR-based borrowing system, allowing the department to easily manage and track equipment loans to other university offices with increased speed and accuracy.</p>
+                        <p>An inventory system for the BatStateU-ACTION Center to streamline the management of critical office supplies, emergency kits, and rescue equipment. Features a real-time dashboard for asset tracking and a QR-based borrowing system for equipment loans.</p>
                     </div>
                 </div>
             </div>
@@ -316,34 +377,30 @@ Currently based in Makati, I spend my free time reading and watching fantasy and
 <!-- Contact Section -->
 <section id="contact">
     <div class="container">
-        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <h2 class="section-title">Contact <span>Me</span></h2>
 
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="contact-card">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="contact-info-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <strong>Email</strong>
-                                    <span>jmmontealto@sscgi.com</span>
-                                </div>
-                            </div>
-                            <div class="contact-info-item">
-                                <i class="fas fa-phone-alt"></i>
-                                <div>
-                                    <strong>Phone Number</strong>
-                                    <span>09709124594 / 09752108229</span>
-                                </div>
-                            </div>
-                            <div class="contact-info-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <strong>Address</strong>
-                                    <span>Victoria De Makati, Washington Street corner Dela Rosa Street, Barangay Pio del Pilar, Makati City, 1230 Metro Manila, Philippines</span>
-                                </div>
-                            </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <span>jmmontealto@sscgi.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <strong>Phone Number</strong>
+                            <span>09709124594 / 09752108229</span>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Address</strong>
+                            <span>Victoria De Makati, Washington Street corner Dela Rosa Street, Barangay Pio del Pilar, Makati City, 1230 Metro Manila, Philippines</span>
                         </div>
                     </div>
                 </div>
@@ -352,27 +409,24 @@ Currently based in Makati, I spend my free time reading and watching fantasy and
     </div>
 </section>
 
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 My Portfolio. All Rights Reserved.</p>
+    <p>Nice Meeting You All, Have A Blessed Morning</p>
+</footer>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 My Portfolio. All Rights Reserved.</p>
-        <p>Nice Meeting You All, Have A Blessed Morning</p>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-<!-- Modal to View Larger Image -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body position-relative">
-                <!-- Enlarged Image -->
-                <img id="modalImage" src="" class="img-fluid" alt="Enlarged Image">
-                <!-- Modal Controls with "<" and ">" positioned on the left and right of the image -->
-                <span id="prevBtn" class="carousel-control-prev-icon" aria-hidden="true" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); font-size: 2rem; color: white; cursor: pointer;">&lt;</span>
-                <span id="nextBtn" class="carousel-control-next-icon" aria-hidden="true" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); font-size: 2rem; color: white; cursor: pointer;">&gt;</span>
+<!-- Image Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-transparent border-0">
+            <div class="modal-body position-relative p-0">
+                <img id="modalImage" src="" class="img-fluid rounded" alt="Enlarged view">
+                <button type="button" id="prevBtn" class="modal-control-btn modal-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button type="button" id="nextBtn" class="modal-control-btn modal-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -382,7 +436,6 @@ Currently based in Makati, I spend my free time reading and watching fantasy and
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    // JavaScript to handle the modal and enlarge images
     const carouselImages = document.querySelectorAll('.carousel-item img');
     const modalImage = document.getElementById('modalImage');
     const prevBtn = document.getElementById('prevBtn');
@@ -390,12 +443,13 @@ Currently based in Makati, I spend my free time reading and watching fantasy and
     
     let currentIndex = 0;
 
-    // Function to update the modal image source
     function updateModalImage(index) {
-        modalImage.src = carouselImages[index].src;
+        if (carouselImages[index]) {
+            modalImage.src = carouselImages[index].src;
+            modalImage.alt = carouselImages[index].alt || 'Gallery image';
+        }
     }
 
-    // Event listener for each image in the carousel
     carouselImages.forEach((img, index) => {
         img.addEventListener('click', () => {
             currentIndex = index;
@@ -403,20 +457,16 @@ Currently based in Makati, I spend my free time reading and watching fantasy and
         });
     });
 
-    // Event listener for 'Next' arrow
-    nextBtn.addEventListener('click', () => {
-        if (currentIndex < carouselImages.length - 1) {
-            currentIndex++;
-            updateModalImage(currentIndex);
-        }
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % carouselImages.length;
+        updateModalImage(currentIndex);
     });
 
-    // Event listener for 'Previous' arrow
-    prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateModalImage(currentIndex);
-        }
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
+        updateModalImage(currentIndex);
     });
 </script>
 
