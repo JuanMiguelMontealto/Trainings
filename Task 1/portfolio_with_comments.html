@@ -5,26 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS - CDN link. Kung mawala to, masisira layout mo kasi wala kang grid system at components -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Font Awesome -->
+    <!-- Font Awesome - para sa icons (envelope, phone, map, chevrons). Kung alisin, mawawala lahat ng icons mo -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Custom CSS file mo. Kung mawala to, wala ng styling - plain HTML lang lalabas -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Navigation -->
+<!-- ===== NAVIGATION BAR ===== -->
+<!-- Ito yung menu sa taas. Kung mawala, walang way para mag-navigate sa sections -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
+        <!-- Brand/logo area. Kung alisin, wala ng name/logo sa navbar -->
         <a class="navbar-brand" href="#">
             <img src="logo.png" alt="My Portfolio Logo" style="height: 60px;"> TASK ONE: PORTFOLIO
         </a>
+
+        <!-- Hamburger button - lumalabas lang sa mobile. Kung mawala, hindi mo ma-expand menu sa phone -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Menu links. Kung alisin, walang navigation links -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+                <!-- bawat nav-item = link papunta sa section. Kung alisin isa, hindi na mararating yung section na yun via click -->
                 <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
@@ -35,17 +44,21 @@
     </div>
 </nav>
 
-<!-- Home Section -->
+<!-- ===== HOME / HERO SECTION ===== -->
+<!-- Ito yung unang makikita ng visitor. Kung mawala, diretso na agad sa About -->
     <section id="home" class="text-center">
         <div class="container">
             <h1>Don't just pass by or click away; get to know me and my work today.</h1>
         </div>
     </section>
 
-<!-- About Section -->
+<!-- ===== ABOUT SECTION ===== -->
+<!-- Naglalaman ng bio mo. Kung mawala, walang info tungkol sayo -->
     <section id="about">
         <div class="container">
+            <!-- row = Bootstrap grid row. Kung mawala, hindi na side-by-side yung text at image -->
             <div class="row align-items-center">
+                <!-- col-md-6 = left side (text). Kung mawala, full width na lahat -->
                 <div class="col-md-6">
             <h2 class="section-title">About <span>Me</span></h2>
             <p style="text-align: justify;"> 
@@ -58,6 +71,7 @@
             Outside of my professional interests, I enjoy reading fantasy and BL stories, watching series and documentaries, and cooking. Cooking is a personal passion of mine and reflects my interest in creativity beyond technology.
             </p>
         </div>
+        <!-- col-md-6 = right side (image). Kung mawala, walang picture sa About -->
         <div class="col-md-6 text-center">
             <img src="me.png" alt="About Me" class="img-fluid about-img">
         </div>
@@ -66,14 +80,19 @@
     </section>
 
 
-<!-- Gallery Section -->
+<!-- ===== GALLERY SECTION ===== -->
+<!-- Carousel ng mga pictures mo. Kung mawala, walang gallery -->
 <section id="gallery">
     <div class="container">
         <h2 class="section-title">Gallery</h2>
+            <!-- Bootstrap Carousel component. Kung mawala, hindi na mag-slide-slide yung images -->
             <div id="carouselGallery" class="carousel slide" data-bs-ride="carousel">
 
+                <!-- carousel-inner = container ng lahat ng images. Kung mawala, wala ng carousel -->
                 <div class="carousel-inner">
+            <!-- carousel-item = isang slide. Kung alisin isa, yun lang nawala; kung lahat, blanko -->
             <div class="carousel-item active">
+                <!-- data-bs-toggle="modal" = pag-click, mago-open modal. Kung alisin, hindi na mag-eenlarge -->
                 <img src="gal1.jpg" alt="Gallery Image 1" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#imageModal">
             </div>
             <div class="carousel-item">
@@ -90,9 +109,11 @@
             </div>
         </div>
 
+        <!-- Previous button. Kung mawala, walang way pumunta sa previous image -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
+        <!-- Next button. Kung mawala, walang way pumunta sa next image -->
         <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
@@ -100,12 +121,15 @@
     </div>
 </section>
 
-<!-- Projects Section -->
+<!-- ===== PROJECTS SECTION ===== -->
+<!-- Naglalaman ng projects mo. Kung mawala, walang showcase ng work mo -->
 <section id="projects">
     <div class="container">
         <h2 class="section-title">My <span>Projects</span></h2>
 
+        <!-- row g-4 = grid with gap. Kung mawala, magdikit-dikit cards mo -->
         <div class="row g-4">
+            <!-- col-md-6 = half width per card. Kung gawing col-md-12, full width na isa-isa -->
             <!-- Project 1 -->
             <div class="col-md-6">
                 <div class="project-card">
@@ -135,16 +159,20 @@
     </div>
 </section>
 
-<!-- Contact Section -->
+<!-- ===== CONTACT SECTION ===== -->
+<!-- Naglalaman ng contact info mo. Kung mawala, walang way malaman details mo -->
 <section id="contact">
     <div class="container">
         <h2 class="section-title">Contact <span>Me</span></h2>
 
+        <!-- row justify-content-center = center yung card. Kung mawala, nasa left side -->
         <div class="row justify-content-center">
+            <!-- col-lg-8 = width ng card. Kung palakihin, mas malapad; kung paliitin, masikip -->
             <div class="col-lg-8">
                 <div class="contact-card">
+                    <!-- bawat contact-info-item = isang info line. Kung alisin isa, nawala yung info na yun -->
                     <div class="contact-info-item">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope"></i> <!-- Font Awesome icon. Kung mawala, walang envelope icon -->
                         <div>
                             <strong>Email</strong>
                             <span>jmmontealto@sscgi.com</span>
@@ -170,21 +198,26 @@
     </div>
 </section>
 
-<!-- Footer -->
+<!-- ===== FOOTER ===== -->
+<!-- Footer sa baba. Kung mawala, biglang tapos na yung page walang closing -->
 <footer>
     <p> Task One: Portfolio</p>
     <p>Nice Meeting You All, Have A Blessed Day</p>
 </footer>
 
-<!-- Image Modal -->
+<!-- ===== IMAGE MODAL ===== -->
+<!-- Popup na lumalabas pag click ng gallery image. Kung mawala, hindi na mag-eenlarge images -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content bg-transparent border-0">
             <div class="modal-body position-relative p-0">
+                <!-- modalImage = dito lumalabas yung enlarged pic. Kung mawala, blanko modal -->
                 <img id="modalImage" src="" class="img-fluid rounded" alt="Enlarged view">
+                <!-- Prev button sa modal. Kung mawala, walang way bumalik sa previous pic -->
                 <button type="button" id="prevBtn" class="modal-control-btn modal-prev">
                     <i class="fas fa-chevron-left"></i>
                 </button>
+                <!-- Next button sa modal. Kung mawala, walang way pumunta sa next pic -->
                 <button type="button" id="nextBtn" class="modal-control-btn modal-next">
                     <i class="fas fa-chevron-right"></i>
                 </button>
@@ -193,40 +226,47 @@
     </div>
 </div>
 
-<!-- Bootstrap JS -->
+<!-- Bootstrap JS - kailangan para gumana yung navbar toggle, carousel, at modal. Kung mawala, hindi gagana yung interactive parts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- ===== CUSTOM JAVASCRIPT ===== -->
+<!-- Ito yung nagpapagana ng modal navigation (prev/next). Kung mawala, stuck ka sa isang image lang -->
 <script>
+    // Kunin lahat ng images sa carousel para magamit sa modal
     const carouselImages = document.querySelectorAll('.carousel-item img');
     const modalImage = document.getElementById('modalImage');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
-    let currentIndex = 0;
+    let currentIndex = 0; // Index ng current image na naka-display
 
+    // Function para i-update yung image sa modal. Kung mawala, hindi magpapalit yung pic
     function updateModalImage(index) {
         if (carouselImages[index]) {
-            modalImage.src = carouselImages[index].src;
+            modalImage.src = carouselImages[index].src; // palitan source ng image
             modalImage.alt = carouselImages[index].alt || 'Gallery image';
         }
     }
 
+    // Lagyan ng click listener bawat image sa carousel. Kung mawala, hindi mago-open modal
     carouselImages.forEach((img, index) => {
         img.addEventListener('click', () => {
-            currentIndex = index;
-            updateModalImage(currentIndex);
+            currentIndex = index; // tandaan kung anong image yung click
+            updateModalImage(currentIndex); // i-display sa modal
         });
     });
 
+    // Next button - pag-click, next image. Kung mawala, walang next
     nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        currentIndex = (currentIndex + 1) % carouselImages.length;
+        e.stopPropagation(); // para hindi ma-close modal
+        currentIndex = (currentIndex + 1) % carouselImages.length; // loop back to 0 pag dulo na
         updateModalImage(currentIndex);
     });
 
+    // Prev button - pag-click, previous image. Kung mawala, walang previous
     prevBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
+        currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length; // loop to last pag una na
         updateModalImage(currentIndex);
     });
 </script>
