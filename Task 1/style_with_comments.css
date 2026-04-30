@@ -62,25 +62,9 @@
             margin: 0 !important;
         }
 
-        /* NOTE: May .hero-section class ka na hindi ginagamit sa HTML. Kung gusto mo background image, palitan mo yung #home section sa HTML na may class="hero-section" */
-        .hero-section {
-            background-image: url('home.png'); /* Background image. Kung wala file na home.png, hindi lalabas */
-            background-size: cover; /* Para sakto sa screen. Kung mawala, baka mag-tile o mag-stretch */
-            background-position: center; /* Center yung image. Kung mawala, top-left default */
-            padding: 100px 0;
-            color: white;
-        }
-
-        .hero-section h1 {
-            font-family: 'Comic Sans MS', cursive, sans-serif; /* Font ng heading. Kung wala sa PC, fallback na lang */
-            font-size: 3rem; /* Malaking text. Kung mawala, default size */
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Shadow para readable. Kung mawala, flat text */
-        }
-
         /* ===== ABOUT ===== */
         #about {
-            background: linear-gradient(180deg, var(--dark-blue) 40%, var(--section-alt) 100%); /* Gradient transition. Kung mawala, solid color */
+            background: linear-gradient(180deg, var(--dark-blue) 10%, var(--section-alt) 100%); /* Gradient transition. Kung mawala, solid color */
             padding: 50px 0; /* Space. Kung mawala, dikit sa sections */
             margin: 0 !important;
         }

@@ -55,20 +55,6 @@
             padding: 100px 0;
             margin: 0 !important;
         }
-        .hero-section {
-            background-image: url('home.png');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 0;
-            color: white;
-        }
-
-        .hero-section h1 {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            font-size: 3rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
 
         /* ===== ABOUT ===== */
         #about {
@@ -86,8 +72,8 @@
             line-height: 1.8;
         }
 .about-img {
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
 }
 
